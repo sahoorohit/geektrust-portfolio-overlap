@@ -57,6 +57,6 @@ class Market:
             common_stocks = set(fund.stocks) & set(user_fund.stocks)
             overlap_percentage = (2 * len(common_stocks) * 100) / (fund.stocks_count + user_fund.stocks_count)
             overlap_percentage = round(overlap_percentage, 2)
-            overlap.append(f'{fund.name} {user_fund.name} {overlap_percentage}')
+            overlap.append(f'{fund.name} {user_fund.name} {overlap_percentage}%')
 
         return overlap
