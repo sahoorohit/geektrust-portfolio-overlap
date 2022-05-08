@@ -12,3 +12,4 @@ class Operations(Enum):
 
 
 STOCKS_DATA_FILE = "stock_data.json"
+ZERO_PERCENT = float(0.0)

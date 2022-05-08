@@ -39,7 +39,7 @@ class TestMarket(unittest.TestCase):
     def test_calculate_overlap_when_overlap_is_100_percent(self):
         self.test_add_single_fund_to_portfolio()
         output = self.market.calculate_overlap(fund="ICICI_PRU_NIFTY_NEXT_50_INDEX")
-        expected_output = ["ICICI_PRU_NIFTY_NEXT_50_INDEX ICICI_PRU_NIFTY_NEXT_50_INDEX 100.0%"]
+        expected_output = ["ICICI_PRU_NIFTY_NEXT_50_INDEX ICICI_PRU_NIFTY_NEXT_50_INDEX 100.00%"]
         self.assertEqual(output, expected_output)
 
     def test_add_stock_when_fund_not_exists(self):

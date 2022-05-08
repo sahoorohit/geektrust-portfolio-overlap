@@ -2,7 +2,7 @@ import json
 from enum import Enum
 from typing import List, Optional, Union
 
-from constants import STOCKS_DATA_FILE, Responses
+from constants import STOCKS_DATA_FILE, ZERO_PERCENT, Responses
 from funds import Fund
 from portfolio import Portfolio
 
@@ -56,7 +56,8 @@ class Market:
         for user_fund in self.portfolio.user_funds:
             common_stocks = set(fund.stocks) & set(user_fund.stocks)
             overlap_percentage = (2 * len(common_stocks) * 100) / (fund.stocks_count + user_fund.stocks_count)
-            overlap_percentage = round(overlap_percentage, 2)
-            overlap.append(f'{fund.name} {user_fund.name} {overlap_percentage}%')
+
+            if overlap_percentage != ZERO_PERCENT:
+                overlap.append(f'{fund.name} {user_fund.name} {overlap_percentage:.2f}%')
 
         return overlap
